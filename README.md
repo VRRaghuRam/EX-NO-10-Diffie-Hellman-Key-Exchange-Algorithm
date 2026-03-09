@@ -43,18 +43,18 @@ int main()
     scanf("%lld", &P);
     printf("Enter the value of G (primitive root of P): ");
     scanf("%lld", &G);
-    printf("Enter private key a for Yuga: ");
+    printf("Enter private key a for Raghu: ");
     scanf("%lld", &a);
-    printf("Enter private key b for Bharathi: ");
+    printf("Enter private key b for Ram: ");
     scanf("%lld", &b);
     x = power(G, a, P);
     y = power(G, b, P);
     ka = power(y, a, P);
     kb = power(x, b, P);
-    printf("\nPublic key of Yuga: %lld", x);
-    printf("\nPublic key of Bharathi: %lld", y);
-    printf("\n\nSecret key for Yuga: %lld", ka);
-    printf("\nSecret key for Bharathi: %lld", kb);
+    printf("\nPublic key of Raghu: %lld", x);
+    printf("\nPublic key of Ram: %lld", y);
+    printf("\n\nSecret key for Raghu: %lld", ka);
+    printf("\nSecret key for Ram: %lld", kb);
 }
 ```
 
