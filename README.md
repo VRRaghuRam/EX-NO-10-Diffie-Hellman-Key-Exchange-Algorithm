@@ -1,4 +1,6 @@
 # EX-NO-10-Diffie-Hellman-Key-Exchange-Algorithm
+## NAME : Raghu Ram VR
+## REG.N0 : 212224220075
 
 ## AIM:
 To Implement Diffie Hellman Key Exchange Algorithm 
@@ -19,10 +21,48 @@ To Implement Diffie Hellman Key Exchange Algorithm
 5. Security: The difficulty of computing discrete logarithms ensures that the shared key remains secure even if public values are intercepted.
 
 ## Program:
+```
+#include <stdio.h>
+long long int power(long long int base, long long int exp, long long int mod)
+{
+    long long int result = 1;
+    base = base % mod;
+    while (exp > 0)
+    {
+        if (exp % 2 == 1)
+            result = (result * base) % mod;
+        exp = exp >> 1;
+        base = (base * base) % mod;
+    }
+    return result;
+}
+int main()
+{
+    long long int P, G, a, b, x, y, ka, kb;
+    printf("Enter the value of P (prime number): ");
+    scanf("%lld", &P);
+    printf("Enter the value of G (primitive root of P): ");
+    scanf("%lld", &G);
+    printf("Enter private key a for Yuga: ");
+    scanf("%lld", &a);
+    printf("Enter private key b for Bharathi: ");
+    scanf("%lld", &b);
+    x = power(G, a, P);
+    y = power(G, b, P);
+    ka = power(y, a, P);
+    kb = power(x, b, P);
+    printf("\nPublic key of Yuga: %lld", x);
+    printf("\nPublic key of Bharathi: %lld", y);
+    printf("\n\nSecret key for Yuga: %lld", ka);
+    printf("\nSecret key for Bharathi: %lld", kb);
+}
+```
 
 
 
 ## Output:
+<img width="1337" height="717" alt="image" src="https://github.com/user-attachments/assets/6532709a-5296-4407-8f4d-cf52f014a5a6" />
+
 
 
 
